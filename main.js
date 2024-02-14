@@ -370,11 +370,26 @@ const TwoMinutesTimeToTwelve = () => {
     StartClockGoing();
 }
 
-TwoMinutesTimeToTwelve();
+//TwoMinutesTimeToTwelve();
 
 /*
+
 18. Escribe una función que compruebe si un objeto tiene determinada propiedad (pasando como
 parámetro el objeto y la propiedad en cuestión)
+
+*/
+
+const CheckObjectProperty = (object, property) => {
+    if(Object.keys(object).includes(property)){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+module.exports.CheckObjectProperty = CheckObjectProperty;
+
+/*
 19. Escribe una función que sume todos sus argumentos, independientemente de cuántos sean
 20. Escribe una función que me diga si un alumno está aprobado o no, a la cual puedo pasar
 cualquier cantidad de notas como parámetro

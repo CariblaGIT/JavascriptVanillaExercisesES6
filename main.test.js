@@ -259,3 +259,18 @@ describe('Testing Vowels in String - CountVowelsInString', () => {
         expect(result).toBe(0);
     })
 })
+
+describe('Testing Properties into Objects - CheckObjectProperty', () => {
+    test('Test 1.1', () => {
+        const result = functionsES6.CheckObjectProperty({nombre: "Carlos", edad: 23, ciudad: "Valencia"}, "edad");
+        expect(result).toBe(true);
+    })
+    test('Test 1.2', () => {
+        const result = functionsES6.CheckObjectProperty({nombre: "Carlos", edad: 23, ciudad: "Valencia"}, "calle");
+        expect(result).toBe(false);
+    })
+    test('Test 1.3', () => {
+        const result = functionsES6.CheckObjectProperty({nombre: "Carlos", edad: 23, ciudad: "Valencia", vehiculos: {coche: "FordFiesta"}}, "coche");
+        expect(result).toBe(false);
+    })
+})
