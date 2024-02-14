@@ -244,3 +244,18 @@ describe('Testing Counting nums inside array - CountingNumsInsideArray', () => {
         expect(result).toBe(0);
     })
 })
+
+describe('Testing Getting longest word - GetLongestWord', () => {
+    test('Test 1.1', () => {
+        const result = functionsES6.GetLongestWord("GeeksHubs esta siendo una experiencia enriquecedora");
+        expect(result).toBe("enriquecedora");
+    })
+    test('Test 1.2', () => {
+        const result = functionsES6.GetLongestWord("Supercalifragilisticoespialidoso , aunque suene extravagante , ¡ raro y espantoso !");
+        expect(result).toBe("Supercalifragilisticoespialidoso");
+    })
+    test('Test 1.3', () => {
+        const result = functionsES6.GetLongestWord(" ");
+        expect(result).toBe(undefined);
+    })
+})

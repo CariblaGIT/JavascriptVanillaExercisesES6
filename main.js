@@ -275,7 +275,27 @@ const CountingNumsInsideArray = (array) => {
 module.exports.CountingNumsInsideArray = CountingNumsInsideArray;
 
 /*
+
 14. Escribe una función que determine la palabra más larga de una string
+
+*/
+
+const GetLongestWord = (string) => {
+    let arrayWords = string.split(' ');
+    let longestWord;
+    let maxSizeWord = 0;
+    for(word in arrayWords){
+        if(arrayWords[word].length > maxSizeWord){
+            maxSizeWord = arrayWords[word].length;
+            longestWord = arrayWords[word];
+        }
+    }
+    return longestWord;
+}
+
+module.exports.GetLongestWord = GetLongestWord;
+
+/*
 15. Crea una función que, dada una string, cuente cuántas vocales hay en la misma y devuelva el
 resultado
 16. Crea una función que genere una contraseña aleatoria. Debes pasar por parámetro la cantidad
