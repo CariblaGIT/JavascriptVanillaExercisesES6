@@ -131,3 +131,20 @@ describe('Testing Leap Years in Range - GetLeapYearsInRange', () => {
         })
     })
 })
+
+describe('Testing Removing from Array - RemoveElementFromArray', () => {
+    describe('Bloque 1 - Objects that belongs to array ONCE', () => {
+        test('Test 1.1', () => {
+            const result = functionsES6.RemoveElementFromArray([0, 1, 2, 3, 4, 5, 6, 7], 4);
+            expect(result).toStrictEqual([0, 1, 2, 3, 5, 6, 7]);
+        })
+        test('Test 1.2', () => {
+            const result = functionsES6.RemoveElementFromArray(["Dog", "Cat", "Rabbit", "Turtle", "Fish"], "Rabbit");
+            expect(result).toStrictEqual(["Dog", "Cat", "Turtle", "Fish"]);
+        })
+        test('Test 1.3', () => {
+            const result = functionsES6.RemoveElementFromArray([0.11, 2, "Bug", "Donkey", 3, -78, "T-Rex"], -78);
+            expect(result).toStrictEqual([0.11, 2, "Bug", "Donkey", 3, "T-Rex"]);
+        })
+    })
+})

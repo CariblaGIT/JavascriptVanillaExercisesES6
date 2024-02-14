@@ -152,6 +152,20 @@ module.exports.GetLeapYearsInRange = GetLeapYearsInRange;
 
 7. Crea una función que, dados un array y uno de sus elementos, elimine ese elemento del
 array
+
+*/
+
+const RemoveElementFromArray = (array, object) => {
+    if(array.findIndex((element) => element == object)){
+        return array.filter(item => item !== object) 
+    } else {
+        throw new Error("Objeto no incluido");
+    }
+}
+
+module.exports.RemoveElementFromArray = RemoveElementFromArray;
+
+/*
 8. Crea una función que, dados dos arrays, devuelva un único array con ambos arrays
 concatenados pero que elimine los elementos repetidos de los mismos.
 9. Crea una función que determine si un array contiene cierto elemento, pasando ambos
