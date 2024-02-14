@@ -304,3 +304,18 @@ describe('Testing Student passing with n marks - CheckNotesFromStudent', () => {
         expect(result).toBe(false);
     })
 })
+
+describe('Testing Difference between Max and Min from array - DifferenceGreaterLowerNumsArray', () => {
+    test('Test 1.1', () => {
+        const result = functionsES6.DifferenceGreaterLowerNumsArray(10, 10, 9, 9, 8, 7, 7);
+        expect(result).toBe(3);
+    })
+    test('Test 1.2', () => {
+        const result = functionsES6.DifferenceGreaterLowerNumsArray(1, 2, 3, 4, 5, 6, 7);
+        expect(result).toBe(6);
+    })
+    test('Test 1.3', () => {
+        const result = functionsES6.DifferenceGreaterLowerNumsArray(0);
+        expect(result).toBe(0);
+    })
+})

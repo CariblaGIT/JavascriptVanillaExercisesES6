@@ -421,8 +421,26 @@ const CheckNotesFromStudent = (...marks) => {
 module.exports.CheckNotesFromStudent = CheckNotesFromStudent;
 
 /*
+
 21. Escribe una función que reciba un array de números como argumento y saque la diferencia
 entre el número más alto y el más bajo del mismo. Utiliza el operador ...
+
+*/
+
+const DifferenceGreaterLowerNumsArray = (...array) => {
+    if (array.length === 0) {
+        return 0;
+    }
+      
+    const maxNumber = Math.max(...array);
+    const minNumber = Math.min(...array);
+    
+    return maxNumber - minNumber;
+}
+
+module.exports.DifferenceGreaterLowerNumsArray = DifferenceGreaterLowerNumsArray;
+
+/*
 22. Crea dos arrays de objetos. El primero debe contener los nombres y apellidos de por lo menos
 tres personas. El segundo debe contener otros datos de esas mismas personas, como su dirección
 y su número de teléfono. Utiliza una función para combinar ambos arrays y obtener un array nuevo
