@@ -289,3 +289,18 @@ describe('Testing Sum all params in function (no matter size) - SumAllParameters
         expect(result).toStrictEqual("1 dia mas con 50 tontos cerca.");
     })
 })
+
+describe('Testing Student passing with n marks - CheckNotesFromStudent', () => {
+    test('Test 1.1', () => {
+        const result = functionsES6.CheckNotesFromStudent(10, 10, 9, 9, 8, 7, 7);
+        expect(result).toBe(true);
+    })
+    test('Test 1.2', () => {
+        const result = functionsES6.CheckNotesFromStudent(1, 2, 3, 4, 5, 6, 7);
+        expect(result).toBe(false);
+    })
+    test('Test 1.3', () => {
+        const result = functionsES6.CheckNotesFromStudent(0);
+        expect(result).toBe(false);
+    })
+})

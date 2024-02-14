@@ -402,8 +402,25 @@ const SumAllParameters = (...parameters) => {
 module.exports.SumAllParameters = SumAllParameters;
 
 /*
+
 20. Escribe una función que me diga si un alumno está aprobado o no, a la cual puedo pasar
 cualquier cantidad de notas como parámetro
+
+*/
+
+const CheckNotesFromStudent = (...marks) => {
+    let totalMarks = marks.length
+    let sumMarks = marks.reduce((total, current) => total + current);
+    if(sumMarks / totalMarks > 5){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+module.exports.CheckNotesFromStudent = CheckNotesFromStudent;
+
+/*
 21. Escribe una función que reciba un array de números como argumento y saque la diferencia
 entre el número más alto y el más bajo del mismo. Utiliza el operador ...
 22. Crea dos arrays de objetos. El primero debe contener los nombres y apellidos de por lo menos
