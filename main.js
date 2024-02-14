@@ -117,8 +117,20 @@ Fila 2
 8
 ...
 
-Impulsamos { talento tech }
+*/
 
+const ShowListArrays = (listArrays) => {
+    for(let i = 0; i < listArrays.length; i++){
+        console.log(`Fila ${i+1}`);
+        for(let j = 0; j < listArrays[i].length; j++){
+            console.log(listArrays[i][j]);
+        }
+    }
+}
+
+ShowListArrays([[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]])
+
+/*
 6. Escribe una función que devuelva los años bisiestos en cierto rango de años.
 7. Crea una función que, dados un array y uno de sus elementos, elimine ese elemento del
 array
