@@ -182,3 +182,18 @@ describe('Testing Element inside an array - ElementInsideArray', () => {
         })
     })
 })
+
+describe('Testing array N length filled with content - FillListWithElementsNTimes', () => {
+    test('Test 1.1', () => {
+        const result = functionsES6.FillListWithElementsNTimes(2, 4);
+        expect(result).toStrictEqual([4, 4]);
+    })
+    test('Test 1.2', () => {
+        const result = functionsES6.FillListWithElementsNTimes(1, "Fish");
+        expect(result).toStrictEqual(["Fish"]);
+    })
+    test('Test 1.3', () => {
+        const result = functionsES6.FillListWithElementsNTimes(0, 8.1234567);
+        expect(result).toStrictEqual([ ]);
+    })
+})

@@ -208,8 +208,19 @@ const ElementInsideArray = (array, element) => {
 module.exports.ElementInsideArray = ElementInsideArray;
 
 /*
+
 10. Escribe una función que rellene un array con un determinado número de elementos y
 pasa ambas cosas por parámetro. Es decir, la ejecución de rellenar(3, 4) sería [4, 4, 4]
+
+*/
+
+const FillListWithElementsNTimes = (length, content) => {
+    return new Array(length).fill(content)
+}
+
+module.exports.FillListWithElementsNTimes = FillListWithElementsNTimes;
+
+/*
 11. Escribe una función para intercambiar las posiciones de dos elementos en un array.
 12. Escribe una función que genere un array de números y pásale por parámetro el número inicial
 y el largo del array. El array resultante debe ir sumando de uno en uno hasta alcanzar el largo
