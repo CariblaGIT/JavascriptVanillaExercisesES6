@@ -327,8 +327,8 @@ de caracteres que quieres que tenga la contraseña.
 */
 
 const NewRandomPassword = (length) => {
-    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    const regex = /[a-zA-Z0-9]/; // Regex to match alphanumeric characters
+    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/\&€#@';
+    //const regex = /[a-zA-Z0-9]/; // Regex to match alphanumeric characters
 
     let result = '';
     for (let i = 0; i < length; i++) {
@@ -342,8 +342,37 @@ const NewRandomPassword = (length) => {
 console.log(NewRandomPassword(15))
 
 /*
+
 17. Crea una función reloj que vaya desde las 23:58:00 hasta las 00:00:00 y saque por consola
 cada segundo y minuto entre ambas.
+
+*/
+
+const TwoMinutesTimeToTwelve = () => {
+    let timeClock = new Date();
+    timeClock.setHours(23);
+    timeClock.setMinutes(58);
+    timeClock.setSeconds(0);
+    console.log(timeClock.getHours().toString() + ":" + timeClock.getMinutes().toString() + ":" + timeClock.getSeconds().toString());
+
+    let seconds = 0;
+    const StartClockGoing = () => {
+        if(seconds < 120){
+            setTimeout(() => {
+                timeClock.setSeconds(timeClock.getSeconds() + 1);
+                console.log(timeClock.getHours().toString() + ":" + timeClock.getMinutes().toString() + ":" + timeClock.getSeconds().toString());
+                StartClockGoing();
+            }, 1000);
+            seconds++;
+        }
+    }
+
+    StartClockGoing();
+}
+
+TwoMinutesTimeToTwelve();
+
+/*
 18. Escribe una función que compruebe si un objeto tiene determinada propiedad (pasando como
 parámetro el objeto y la propiedad en cuestión)
 19. Escribe una función que sume todos sus argumentos, independientemente de cuántos sean
