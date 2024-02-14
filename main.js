@@ -320,8 +320,28 @@ const CountVowelsInString = (string) => {
 module.exports.CountVowelsInString = CountVowelsInString;
 
 /*
+
 16. Crea una función que genere una contraseña aleatoria. Debes pasar por parámetro la cantidad
 de caracteres que quieres que tenga la contraseña.
+
+*/
+
+const NewRandomPassword = (length) => {
+    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const regex = /[a-zA-Z0-9]/; // Regex to match alphanumeric characters
+
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        var randomIndex = Math.floor(Math.random() * characters.length);
+        var randomChar = characters.charAt(randomIndex);
+        result += randomChar;
+    }
+    return result;
+}
+
+console.log(NewRandomPassword(15))
+
+/*
 17. Crea una función reloj que vaya desde las 23:58:00 hasta las 00:00:00 y saque por consola
 cada segundo y minuto entre ambas.
 18. Escribe una función que compruebe si un objeto tiene determinada propiedad (pasando como
