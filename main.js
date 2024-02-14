@@ -166,8 +166,30 @@ const RemoveElementFromArray = (array, object) => {
 module.exports.RemoveElementFromArray = RemoveElementFromArray;
 
 /*
+
 8. Crea una función que, dados dos arrays, devuelva un único array con ambos arrays
 concatenados pero que elimine los elementos repetidos de los mismos.
+
+*/
+
+const FusionArrays = (array1, array2) => {
+    let fusedArray = [];
+    for(let i = 0; i < array1.length; i++){
+        if(!fusedArray.includes(array1[i])){
+            fusedArray.push(array1[i])
+        }
+    }
+    for(let i = 0; i < array2.length; i++){
+        if(!fusedArray.includes(array2[i])){
+            fusedArray.push(array2[i])
+        }
+    }
+    return fusedArray;
+}
+
+module.exports.FusionArrays = FusionArrays;
+
+/*
 9. Crea una función que determine si un array contiene cierto elemento, pasando ambos
 como argumentos a la misma
 10. Escribe una función que rellene un array con un determinado número de elementos y

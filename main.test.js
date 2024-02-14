@@ -148,3 +148,20 @@ describe('Testing Removing from Array - RemoveElementFromArray', () => {
         })
     })
 })
+
+describe('Testing Fusing 2 arrays - FusionArrays', () => {
+    describe('Bloque 1 - Simple arrays', () => {
+        test('Test 1.1', () => {
+            const result = functionsES6.FusionArrays([0, 1, 2],[3, 4, 5]);
+            expect(result).toStrictEqual([0, 1, 2, 3, 4, 5]);
+        })
+        test('Test 1.2', () => {
+            const result = functionsES6.FusionArrays(["Dog", "Cat", "Rabbit"], ["Rabbit", "Turtle", "Fish"]);
+            expect(result).toStrictEqual(["Dog", "Cat", "Rabbit", "Turtle", "Fish"]);
+        })
+        test('Test 1.3', () => {
+            const result = functionsES6.FusionArrays([0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 0]);
+            expect(result).toStrictEqual([0, 1]);
+        })
+    })
+})
