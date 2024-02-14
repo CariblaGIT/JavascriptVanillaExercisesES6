@@ -390,7 +390,18 @@ const CheckObjectProperty = (object, property) => {
 module.exports.CheckObjectProperty = CheckObjectProperty;
 
 /*
+
 19. Escribe una función que sume todos sus argumentos, independientemente de cuántos sean
+
+*/
+
+const SumAllParameters = (...parameters) => {
+    return parameters.reduce((total, current) => total + current);
+}
+
+module.exports.SumAllParameters = SumAllParameters;
+
+/*
 20. Escribe una función que me diga si un alumno está aprobado o no, a la cual puedo pasar
 cualquier cantidad de notas como parámetro
 21. Escribe una función que reciba un array de números como argumento y saque la diferencia

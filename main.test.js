@@ -274,3 +274,18 @@ describe('Testing Properties into Objects - CheckObjectProperty', () => {
         expect(result).toBe(false);
     })
 })
+
+describe('Testing Sum all params in function (no matter size) - SumAllParameters', () => {
+    test('Test 1.1', () => {
+        const result = functionsES6.SumAllParameters(1, 2, 3, 4, 5, 6, 7);
+        expect(result).toStrictEqual(28);
+    })
+    test('Test 1.2', () => {
+        const result = functionsES6.SumAllParameters("Hola ", "buenos ", "dias ", "a ", "todos.");
+        expect(result).toStrictEqual("Hola buenos dias a todos.");
+    })
+    test('Test 1.3', () => {
+        const result = functionsES6.SumAllParameters(1, " dia ", "mas ", "con ", 50, " tontos ", "cerca.");
+        expect(result).toStrictEqual("1 dia mas con 50 tontos cerca.");
+    })
+})
