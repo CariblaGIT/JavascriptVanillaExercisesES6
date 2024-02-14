@@ -190,8 +190,24 @@ const FusionArrays = (array1, array2) => {
 module.exports.FusionArrays = FusionArrays;
 
 /*
+
 9. Crea una función que determine si un array contiene cierto elemento, pasando ambos
 como argumentos a la misma
+
+*/
+
+const ElementInsideArray = (array, element) => {
+    for(let i = 0; i < array.length; i++){
+        if(array[i] == element){
+            return true;
+        }
+    }
+    return false;
+}
+
+module.exports.ElementInsideArray = ElementInsideArray;
+
+/*
 10. Escribe una función que rellene un array con un determinado número de elementos y
 pasa ambas cosas por parámetro. Es decir, la ejecución de rellenar(3, 4) sería [4, 4, 4]
 11. Escribe una función para intercambiar las posiciones de dos elementos en un array.

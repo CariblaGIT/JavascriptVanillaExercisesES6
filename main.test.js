@@ -165,3 +165,20 @@ describe('Testing Fusing 2 arrays - FusionArrays', () => {
         })
     })
 })
+
+describe('Testing Element inside an array - ElementInsideArray', () => {
+    describe('Bloque 1 - Simple arrays', () => {
+        test('Test 1.1', () => {
+            const result = functionsES6.ElementInsideArray([0, 1, 2, 3, 4, 5], 4);
+            expect(result).toBe(true);
+        })
+        test('Test 1.2', () => {
+            const result = functionsES6.ElementInsideArray(["Dog", "Cat", "Rabbit"], "Fish");
+            expect(result).toBe(false);
+        })
+        test('Test 1.3', () => {
+            const result = functionsES6.ElementInsideArray([0, 1.23456789, "Cat", [1, 2, 3], "Mammut"], 1.23456789);
+            expect(result).toBe(true);
+        })
+    })
+})
