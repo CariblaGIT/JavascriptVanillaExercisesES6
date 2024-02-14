@@ -90,9 +90,9 @@ todas sus minúsculas a mayúsculas y devuelva una nueva string.(“Hola” devo
 const MinsAMayusReverse = (string) => {
     let arrayWords = string.split(' ');
 
-    for(word in arrayWords){
+    for(let word in arrayWords){
         arrayWords[word] = arrayWords[word].split('');
-        for(letter in arrayWords[word]){
+        for(let letter in arrayWords[word]){
             (arrayWords[word][letter].match(/[a-z]/)) ? arrayWords[word][letter] = arrayWords[word][letter].toUpperCase() : arrayWords[word][letter] = arrayWords[word][letter].toLowerCase();
         }
         arrayWords[word] = arrayWords[word].join('');
@@ -284,7 +284,7 @@ const GetLongestWord = (string) => {
     let arrayWords = string.split(' ');
     let longestWord;
     let maxSizeWord = 0;
-    for(word in arrayWords){
+    for(let word in arrayWords){
         if(arrayWords[word].length > maxSizeWord){
             maxSizeWord = arrayWords[word].length;
             longestWord = arrayWords[word];
@@ -296,8 +296,30 @@ const GetLongestWord = (string) => {
 module.exports.GetLongestWord = GetLongestWord;
 
 /*
+
 15. Crea una función que, dada una string, cuente cuántas vocales hay en la misma y devuelva el
 resultado
+
+*/
+
+const CountVowelsInString = (string) => {
+    let arrayWords = string.split(' ');
+    const vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'];
+    let vowelsCounter = 0;
+    for(let word in arrayWords){
+        let letters = arrayWords[word].split('');
+        for(let letter in letters){
+            if(vowels.includes(letters[letter])){
+                vowelsCounter++;
+            }
+        }
+    }
+    return vowelsCounter;
+}
+
+module.exports.CountVowelsInString = CountVowelsInString;
+
+/*
 16. Crea una función que genere una contraseña aleatoria. Debes pasar por parámetro la cantidad
 de caracteres que quieres que tenga la contraseña.
 17. Crea una función reloj que vaya desde las 23:58:00 hasta las 00:00:00 y saque por consola

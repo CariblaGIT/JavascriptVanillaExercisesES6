@@ -245,17 +245,17 @@ describe('Testing Counting nums inside array - CountingNumsInsideArray', () => {
     })
 })
 
-describe('Testing Getting longest word - GetLongestWord', () => {
+describe('Testing Vowels in String - CountVowelsInString', () => {
     test('Test 1.1', () => {
-        const result = functionsES6.GetLongestWord("GeeksHubs esta siendo una experiencia enriquecedora");
-        expect(result).toBe("enriquecedora");
+        const result = functionsES6.CountVowelsInString("GeeksHubs esta siendo una experiencia enriquecedora");
+        expect(result).toBe(23);
     })
     test('Test 1.2', () => {
-        const result = functionsES6.GetLongestWord("Supercalifragilisticoespialidoso , aunque suene extravagante , ¡ raro y espantoso !");
-        expect(result).toBe("Supercalifragilisticoespialidoso");
+        const result = functionsES6.CountVowelsInString("AEIOUaeiouAeIoUaEiOu");
+        expect(result).toBe(20);
     })
     test('Test 1.3', () => {
-        const result = functionsES6.GetLongestWord(" ");
-        expect(result).toBe(undefined);
+        const result = functionsES6.CountVowelsInString(" ");
+        expect(result).toBe(0);
     })
 })
