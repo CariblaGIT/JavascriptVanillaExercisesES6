@@ -214,3 +214,18 @@ describe('Testing Swapping elements inside array - SwapElementsInArray', () => {
         })
     })
 })
+
+describe('Testing Array creation from i to length+i - ArrayFromNToLengthN', () => {
+    test('Test 1.1', () => {
+        const result = functionsES6.ArrayFromNToLengthN(1, 5);
+        expect(result).toStrictEqual([1, 2, 3, 4, 5]);
+    })
+    test('Test 1.2', () => {
+        const result = functionsES6.ArrayFromNToLengthN(-1, 3);
+        expect(result).toStrictEqual([-1, 0, 1]);
+    })
+    test('Test 1.3', () => {
+        const result = functionsES6.ArrayFromNToLengthN(999999, 4);
+        expect(result).toStrictEqual([999999, 1000000, 1000001, 1000002]);
+    })
+})

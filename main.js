@@ -238,9 +238,24 @@ const SwapElementsInArray = (array, element1, element2) => {
 module.exports.SwapElementsInArray = SwapElementsInArray;
 
 /*
+
 12. Escribe una función que genere un array de números y pásale por parámetro el número inicial
 y el largo del array. El array resultante debe ir sumando de uno en uno hasta alcanzar el largo
 deseado.
+
+*/
+
+const ArrayFromNToLengthN = (initial, length) => {
+    let resArray = [initial];
+    for(let i = 1; i < length; i++){
+        resArray.push(initial+i);
+    }
+    return resArray;
+}
+
+module.exports.ArrayFromNToLengthN = ArrayFromNToLengthN;
+
+/*
 13. Escribe una función que, al pasarle un array como argumento, determine qué elementos de
 ese array son números y devuelva la suma de los mismos.
 14. Escribe una función que determine la palabra más larga de una string
