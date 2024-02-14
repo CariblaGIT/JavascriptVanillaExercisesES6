@@ -85,6 +85,26 @@ module.exports.RepetitiveElementsFromArray = RepetitiveElementsFromArray;
 todas sus minúsculas a mayúsculas y devuelva una nueva string.(“Hola” devolvería
 “hOLA”)
 
+*/
+
+const MinsAMayusReverse = (string) => {
+    let arrayWords = string.split(' ');
+
+    for(word in arrayWords){
+        arrayWords[word] = arrayWords[word].split('');
+        for(letter in arrayWords[word]){
+            (arrayWords[word][letter].match(/[a-z]/)) ? arrayWords[word][letter] = arrayWords[word][letter].toUpperCase() : arrayWords[word][letter] = arrayWords[word][letter].toLowerCase();
+        }
+        arrayWords[word] = arrayWords[word].join('');
+    }
+
+    return arrayWords.join(' ');
+}
+
+module.exports.MinsAMayusReverse = MinsAMayusReverse;
+
+/*
+
 5. Crea una función que, dado el siguiente array: [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4,
 28, 14], [3, 10, 26, 7]] saque por consola cada uno de sus arrays interiores separados por
 indicadores con el número de fila, es decir:

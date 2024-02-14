@@ -97,3 +97,20 @@ describe('Mayor repeticion en array - RepetitiveElementsFromArray', () => {
         })
     })
 })
+
+describe('Cambio mayusculas a minusculas y viceversa - MinsAMayusReverse', () => {
+    describe('Bloque 1 - Strings comunes', () => {
+        test('Test 1.1', () => {
+            const result = functionsES6.MinsAMayusReverse("PaPiTo");
+            expect(result).toBe("pApItO");
+        })
+        test('Test 1.2', () => {
+            const result = functionsES6.MinsAMayusReverse("GeeksHubs es una Organizacion GENIAL");
+            expect(result).toBe("gEEKShUBS ES UNA oRGANIZACION genial");
+        })
+        test('Test 1.3', () => {
+            const result = functionsES6.MinsAMayusReverse("AsDfGhJkLZxCvBnM");
+            expect(result).toBe("aSdFgHjKlzXcVbNm");
+        })
+    })
+})
