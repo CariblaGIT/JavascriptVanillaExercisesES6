@@ -221,7 +221,23 @@ const FillListWithElementsNTimes = (length, content) => {
 module.exports.FillListWithElementsNTimes = FillListWithElementsNTimes;
 
 /*
+
 11. Escribe una función para intercambiar las posiciones de dos elementos en un array.
+
+*/
+
+const SwapElementsInArray = (array, element1, element2) => {
+    let pos1 = array.indexOf(element1);
+    let pos2 = array.indexOf(element2);
+    let ele1 = array[pos1];
+    array[pos1] = array[pos2];
+    array[pos2] = ele1;
+    return array;
+}
+
+module.exports.SwapElementsInArray = SwapElementsInArray;
+
+/*
 12. Escribe una función que genere un array de números y pásale por parámetro el número inicial
 y el largo del array. El array resultante debe ir sumando de uno en uno hasta alcanzar el largo
 deseado.

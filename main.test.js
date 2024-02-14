@@ -197,3 +197,20 @@ describe('Testing array N length filled with content - FillListWithElementsNTime
         expect(result).toStrictEqual([ ]);
     })
 })
+
+describe('Testing Swapping elements inside array - SwapElementsInArray', () => {
+    describe('Bloque 1 - Simple arrays', () => {
+        test('Test 1.1', () => {
+            const result = functionsES6.SwapElementsInArray([0, 1, 2, 3, 4, 5], 4, 5);
+            expect(result).toStrictEqual([0, 1, 2, 3, 5, 4]);
+        })
+        test('Test 1.2', () => {
+            const result = functionsES6.SwapElementsInArray(["Dog", "Cat", "Rabbit", "Fish", "Parrot"], "Dog", "Parrot");
+            expect(result).toStrictEqual([ "Parrot", "Cat", "Rabbit", "Fish", "Dog"]);
+        })
+        test('Test 1.3', () => {
+            const result = functionsES6.SwapElementsInArray([, , 2, , , , 4], 2, 4);
+            expect(result).toStrictEqual([, , 4, , , , 2]);
+        })
+    })
+})
