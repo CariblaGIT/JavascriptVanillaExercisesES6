@@ -6,6 +6,26 @@ empezando por el final. Es decir, si mi array es [1, 2, 3, 4, 5] y yo le paso el
 parámetro, debe devolverme [3, 4, 5] y, si no le paso nada como parámetro, debe
 devolverme solo el 5.
 
+*/
+
+const ReturnLastArray = (array, n = 0) => {
+    if(n == 0){
+        return array[array.length-1]
+    } else if(n <= array.length){
+        let newArray = [];
+        for(let i = n-1; i<array.length; i++){
+            newArray.push(array[i]);
+        }
+        return newArray;
+    } else {
+        throw new Error("Parametro introducido en n imposibilita operacion");
+    }
+}
+
+module.exports.ReturnLastArray = ReturnLastArray;
+
+/*
+
 2. Escribe una función que, dado un array de números, devuelva una string con todos
 esos números e inserte guiones entre los números pares. Es decir, dado el array [0, 2,
 3, 4, 6, 7, 8], me devolvería “0 2 3 4-6 7 8”
