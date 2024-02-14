@@ -131,7 +131,25 @@ const ShowListArrays = (listArrays) => {
 ShowListArrays([[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]])
 
 /*
+
 6. Escribe una función que devuelva los años bisiestos en cierto rango de años.
+
+*/
+
+const GetLeapYearsInRange = (minYear, maxYear) => {
+    let listLeapYears = [];
+    for(let year = minYear; year <= maxYear; year++){
+        if((year % 4 === 0 && year % 100 > 0) || year % 400 == 0){
+            listLeapYears.push(year)
+        }
+    }
+    return listLeapYears;
+}
+
+module.exports.GetLeapYearsInRange = GetLeapYearsInRange;
+
+/*
+
 7. Crea una función que, dados un array y uno de sus elementos, elimine ese elemento del
 array
 8. Crea una función que, dados dos arrays, devuelva un único array con ambos arrays
@@ -141,9 +159,6 @@ como argumentos a la misma
 10. Escribe una función que rellene un array con un determinado número de elementos y
 pasa ambas cosas por parámetro. Es decir, la ejecución de rellenar(3, 4) sería [4, 4, 4]
 11. Escribe una función para intercambiar las posiciones de dos elementos en un array.
-
-Impulsamos { talento tech }
-
 12. Escribe una función que genere un array de números y pásale por parámetro el número inicial
 y el largo del array. El array resultante debe ir sumando de uno en uno hasta alcanzar el largo
 deseado.
@@ -158,9 +173,6 @@ de caracteres que quieres que tenga la contraseña.
 cada segundo y minuto entre ambas.
 18. Escribe una función que compruebe si un objeto tiene determinada propiedad (pasando como
 parámetro el objeto y la propiedad en cuestión)
-
-Impulsamos { talento tech }
-
 19. Escribe una función que sume todos sus argumentos, independientemente de cuántos sean
 20. Escribe una función que me diga si un alumno está aprobado o no, a la cual puedo pasar
 cualquier cantidad de notas como parámetro
@@ -173,9 +185,6 @@ en que cada objeto contiene toda la información de cada persona.
 23. Dado el objeto combinado del ejercicio anterior, crea una función que saque cada uno de los
 objetos excluyendo la edad de la persona. Es decir, debo ver todas las propiedades de cada objeto
 menos la edad. Hazlo utilizando el operador ...
-
-Impulsamos { talento tech }
-
 24. Dado el array de nombres ["mara", "pAblo", "juan", "MARCOS"], devuelve otro en que la
 primera letra de cada uno sea mayúscula y el resto minúsculas
 25. Crea un array con únicamente los nombres de los siguientes objetos
@@ -187,9 +196,6 @@ let personas = [
 { nombre: "Rodrigo", edad: 31 },
 ];
 Además, saca un array únicamente con los nombres de los mayores de 30
-
-Impulsamos { talento tech }
-
 26. Dado un array de números, crea una función que sume solo los pares
 27. Dado un nombre completo (en string), obtén sus iniciales y sácalas también en una string
 28. Saca únicamente los nombres de los estudiantes que tengan una media por encima de 9

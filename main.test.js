@@ -114,3 +114,20 @@ describe('Cambio mayusculas a minusculas y viceversa - MinsAMayusReverse', () =>
         })
     })
 })
+
+describe('Testing Leap Years in Range - GetLeapYearsInRange', () => {
+    describe('Bloque 1 - Ranges of years well', () => {
+        test('Test 1.1', () => {
+            const result = functionsES6.GetLeapYearsInRange(2021,2023);
+            expect(result).toStrictEqual([]);
+        })
+        test('Test 1.2', () => {
+            const result = functionsES6.GetLeapYearsInRange(2000, 2024);
+            expect(result).toStrictEqual([2000, 2004, 2008, 2012, 2016, 2020, 2024]);
+        })
+        test('Test 1.3', () => {
+            const result = functionsES6.GetLeapYearsInRange(1995, 1997);
+            expect(result).toStrictEqual([1996]);
+        })
+    })
+})
