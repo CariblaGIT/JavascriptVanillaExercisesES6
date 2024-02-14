@@ -229,3 +229,18 @@ describe('Testing Array creation from i to length+i - ArrayFromNToLengthN', () =
         expect(result).toStrictEqual([999999, 1000000, 1000001, 1000002]);
     })
 })
+
+describe('Testing Counting nums inside array - CountingNumsInsideArray', () => {
+    test('Test 1.1', () => {
+        const result = functionsES6.CountingNumsInsideArray([1, 2, 3, 4, 0, -2]);
+        expect(result).toBe(6);
+    })
+    test('Test 1.2', () => {
+        const result = functionsES6.CountingNumsInsideArray(["Cat", 0.12345, -1234567898765432123456787654321, [], ]);
+        expect(result).toBe(3);
+    })
+    test('Test 1.3', () => {
+        const result = functionsES6.CountingNumsInsideArray([]);
+        expect(result).toBe(0);
+    })
+})

@@ -256,8 +256,25 @@ const ArrayFromNToLengthN = (initial, length) => {
 module.exports.ArrayFromNToLengthN = ArrayFromNToLengthN;
 
 /*
+
 13. Escribe una función que, al pasarle un array como argumento, determine qué elementos de
 ese array son números y devuelva la suma de los mismos.
+
+*/
+
+const CountingNumsInsideArray = (array) => {
+    let counterNums = 0;
+    for(let i = 0; i < array.length; i++){
+        if(!isNaN(array[i])){
+            counterNums++;
+        }
+    }
+    return counterNums;
+}
+
+module.exports.CountingNumsInsideArray = CountingNumsInsideArray;
+
+/*
 14. Escribe una función que determine la palabra más larga de una string
 15. Crea una función que, dada una string, cuente cuántas vocales hay en la misma y devuelva el
 resultado
