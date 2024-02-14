@@ -74,3 +74,26 @@ describe('Guiones numeros pares - DivideArrayWithMarks', () => {
         })
     })
 })
+
+describe('Mayor repeticion en array - RepetitiveElementsFromArray', () => {
+    describe('Bloque 1 - Arrays comunes', () => {
+        test('Test 1.1', () => {
+            const result = functionsES6.RepetitiveElementsFromArray([1, 1, 1, 1, 1, 2, 1]);
+            expect(result).toStrictEqual([1, 6]);
+        })
+        test('Test 1.2', () => {
+            const result = functionsES6.RepetitiveElementsFromArray([1, -1, -1, -1, 0, 9999999999, 5]);
+            expect(result).toStrictEqual([-1, 3]);
+        })
+        test('Test 1.3', () => {
+            const result = functionsES6.RepetitiveElementsFromArray([1.765, 0.3245, 1.765, -9.99999, 0, 1.765, 10.01010101010]);
+            expect(result).toStrictEqual([1.765, 3]);
+        })
+    })
+    describe('Bloque 2 - Arrays no comunes', () => {
+        test('Test 2.1', () => {
+            const result = functionsES6.RepetitiveElementsFromArray([ , , 3, 2]);
+            expect(result).toStrictEqual([undefined, 2]);
+        })
+    })
+})

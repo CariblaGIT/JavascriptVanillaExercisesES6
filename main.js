@@ -44,8 +44,42 @@ const DivideArrayWithMarks = (arrayNums) => {
 module.exports.DivideArrayWithMarks = DivideArrayWithMarks;
 
 /*
+
 3. Dado un array con elementos repetidos, determina qué elemento es el más frecuente
 y cuántas veces se ha repetido
+
+*/
+
+const RepetitiveElementsFromArray = (arrayNums) => {
+    let numsNoRepetitive = [];
+    for(let i = 0; i < arrayNums.length; i++){
+        if(!numsNoRepetitive.includes(arrayNums[i])){
+            numsNoRepetitive.push(arrayNums[i]);
+        }
+    }
+    let repetitionNumbers = new Array(numsNoRepetitive.length);
+    repetitionNumbers.fill(0, 0, repetitionNumbers.length)
+    for(let i = 0; i < arrayNums.length; i++){
+        for(let j = 0; j < numsNoRepetitive.length; j++){
+            if(arrayNums[i] == numsNoRepetitive[j]){
+                repetitionNumbers[j] += 1;
+            }
+        }
+    }
+    let majorIndexRepetition = 0;
+    let majorNumberRepetition = 0;
+    for(let i = 0; i < repetitionNumbers.length; i++){
+        if (repetitionNumbers[i] > majorNumberRepetition){
+            majorIndexRepetition = i
+            majorNumberRepetition = repetitionNumbers[i]
+        }
+    }
+    return ([numsNoRepetitive[majorIndexRepetition], repetitionNumbers[majorIndexRepetition]])
+}
+
+module.exports.RepetitiveElementsFromArray = RepetitiveElementsFromArray;
+
+/*
 
 4. Dada una string, crea una función que cambie todas sus mayúsculas a minúsculas y
 todas sus minúsculas a mayúsculas y devuelva una nueva string.(“Hola” devolvería
