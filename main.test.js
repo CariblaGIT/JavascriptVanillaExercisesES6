@@ -356,3 +356,14 @@ describe('Testing Sumatory of odds inside array - SumOddsFromArray', () => {
         expect(result).toBe(14);
     })
 })
+
+describe('Testing Getting initials of name - GetInitialsOfName', () => {
+    test('Test 1', () => {
+        const result = functionsES6.GetInitialsOfName("carLos ibaÑez lAmAs");
+        expect(result).toBe("C.I.L");
+    })
+    test('Test 2', () => {
+        const result = functionsES6.GetInitialsOfName("MARIANO rajoy");
+        expect(result).toBe("M.R");
+    })
+})

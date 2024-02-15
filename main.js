@@ -533,7 +533,24 @@ const SumOddsFromArray = (arrayNums) => {
 module.exports.SumOddsFromArray = SumOddsFromArray;
 
 /*
+
 27. Dado un nombre completo (en string), obtén sus iniciales y sácalas también en una string
+
+*/
+
+const GetInitialsOfName = (name) => {
+    let arrayName = name.toUpperCase().split(' ');
+    let initials = [];
+    for (let partName of arrayName){
+        initials.push(partName.slice(0,1));
+    }
+    return initials.join('.');
+}
+
+module.exports.GetInitialsOfName = GetInitialsOfName;
+
+/*
+
 28. Saca únicamente los nombres de los estudiantes que tengan una media por encima de 9
 let estudiantes = [
 { nombre: 'Mara', notas: [10, 7, 8, 8, 9] },
