@@ -515,7 +515,24 @@ const GetNamesAndNamesByAge = (arrayPeople, age = 0) => {
 module.exports.GetNamesAndNamesByAge = GetNamesAndNamesByAge;
 
 /*
+
 26. Dado un array de números, crea una función que sume solo los pares
+
+*/
+
+const SumOddsFromArray = (arrayNums) => {
+    let sumatory = 0;
+    for(let i = 0; i < arrayNums.length; i++){
+        if(arrayNums[i] % 2 == 0){
+            sumatory += arrayNums[i];
+        }
+    }
+    return sumatory;
+}
+
+module.exports.SumOddsFromArray = SumOddsFromArray;
+
+/*
 27. Dado un nombre completo (en string), obtén sus iniciales y sácalas también en una string
 28. Saca únicamente los nombres de los estudiantes que tengan una media por encima de 9
 let estudiantes = [

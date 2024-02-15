@@ -184,15 +184,15 @@ describe('Testing Element inside an array - ElementInsideArray', () => {
 })
 
 describe('Testing array N length filled with content - FillListWithElementsNTimes', () => {
-    test('Test 1.1', () => {
+    test('Test 1', () => {
         const result = functionsES6.FillListWithElementsNTimes(2, 4);
         expect(result).toStrictEqual([4, 4]);
     })
-    test('Test 1.2', () => {
+    test('Test 2', () => {
         const result = functionsES6.FillListWithElementsNTimes(1, "Fish");
         expect(result).toStrictEqual(["Fish"]);
     })
-    test('Test 1.3', () => {
+    test('Test 3', () => {
         const result = functionsES6.FillListWithElementsNTimes(0, 8.1234567);
         expect(result).toStrictEqual([ ]);
     })
@@ -216,132 +216,143 @@ describe('Testing Swapping elements inside array - SwapElementsInArray', () => {
 })
 
 describe('Testing Array creation from i to length+i - ArrayFromNToLengthN', () => {
-    test('Test 1.1', () => {
+    test('Test 1', () => {
         const result = functionsES6.ArrayFromNToLengthN(1, 5);
         expect(result).toStrictEqual([1, 2, 3, 4, 5]);
     })
-    test('Test 1.2', () => {
+    test('Test 2', () => {
         const result = functionsES6.ArrayFromNToLengthN(-1, 3);
         expect(result).toStrictEqual([-1, 0, 1]);
     })
-    test('Test 1.3', () => {
+    test('Test 3', () => {
         const result = functionsES6.ArrayFromNToLengthN(999999, 4);
         expect(result).toStrictEqual([999999, 1000000, 1000001, 1000002]);
     })
 })
 
 describe('Testing Counting nums inside array - CountingNumsInsideArray', () => {
-    test('Test 1.1', () => {
+    test('Test 1', () => {
         const result = functionsES6.CountingNumsInsideArray([1, 2, 3, 4, 0, -2]);
         expect(result).toBe(6);
     })
-    test('Test 1.2', () => {
+    test('Test 2', () => {
         const result = functionsES6.CountingNumsInsideArray(["Cat", 0.12345, -1234567898765432123456787654321, [], ]);
         expect(result).toBe(3);
     })
-    test('Test 1.3', () => {
+    test('Test 3', () => {
         const result = functionsES6.CountingNumsInsideArray([]);
         expect(result).toBe(0);
     })
 })
 
 describe('Testing Vowels in String - CountVowelsInString', () => {
-    test('Test 1.1', () => {
+    test('Test 1', () => {
         const result = functionsES6.CountVowelsInString("GeeksHubs esta siendo una experiencia enriquecedora");
         expect(result).toBe(23);
     })
-    test('Test 1.2', () => {
+    test('Test 2', () => {
         const result = functionsES6.CountVowelsInString("AEIOUaeiouAeIoUaEiOu");
         expect(result).toBe(20);
     })
-    test('Test 1.3', () => {
+    test('Test 3', () => {
         const result = functionsES6.CountVowelsInString(" ");
         expect(result).toBe(0);
     })
 })
 
 describe('Testing Properties into Objects - CheckObjectProperty', () => {
-    test('Test 1.1', () => {
+    test('Test 1', () => {
         const result = functionsES6.CheckObjectProperty({nombre: "Carlos", edad: 23, ciudad: "Valencia"}, "edad");
         expect(result).toBe(true);
     })
-    test('Test 1.2', () => {
+    test('Test 2', () => {
         const result = functionsES6.CheckObjectProperty({nombre: "Carlos", edad: 23, ciudad: "Valencia"}, "calle");
         expect(result).toBe(false);
     })
-    test('Test 1.3', () => {
+    test('Test 3', () => {
         const result = functionsES6.CheckObjectProperty({nombre: "Carlos", edad: 23, ciudad: "Valencia", vehiculos: {coche: "FordFiesta"}}, "coche");
         expect(result).toBe(false);
     })
 })
 
 describe('Testing Sum all params in function (no matter size) - SumAllParameters', () => {
-    test('Test 1.1', () => {
+    test('Test 1', () => {
         const result = functionsES6.SumAllParameters(1, 2, 3, 4, 5, 6, 7);
         expect(result).toStrictEqual(28);
     })
-    test('Test 1.2', () => {
+    test('Test 2', () => {
         const result = functionsES6.SumAllParameters("Hola ", "buenos ", "dias ", "a ", "todos.");
         expect(result).toStrictEqual("Hola buenos dias a todos.");
     })
-    test('Test 1.3', () => {
+    test('Test 3', () => {
         const result = functionsES6.SumAllParameters(1, " dia ", "mas ", "con ", 50, " tontos ", "cerca.");
         expect(result).toStrictEqual("1 dia mas con 50 tontos cerca.");
     })
 })
 
 describe('Testing Student passing with n marks - CheckNotesFromStudent', () => {
-    test('Test 1.1', () => {
+    test('Test 1', () => {
         const result = functionsES6.CheckNotesFromStudent(10, 10, 9, 9, 8, 7, 7);
         expect(result).toBe(true);
     })
-    test('Test 1.2', () => {
+    test('Test 2', () => {
         const result = functionsES6.CheckNotesFromStudent(1, 2, 3, 4, 5, 6, 7);
         expect(result).toBe(false);
     })
-    test('Test 1.3', () => {
+    test('Test 3', () => {
         const result = functionsES6.CheckNotesFromStudent(0);
         expect(result).toBe(false);
     })
 })
 
 describe('Testing Difference between Max and Min from array - DifferenceGreaterLowerNumsArray', () => {
-    test('Test 1.1', () => {
+    test('Test 1', () => {
         const result = functionsES6.DifferenceGreaterLowerNumsArray(10, 10, 9, 9, 8, 7, 7);
         expect(result).toBe(3);
     })
-    test('Test 1.2', () => {
+    test('Test 2', () => {
         const result = functionsES6.DifferenceGreaterLowerNumsArray(1, 2, 3, 4, 5, 6, 7);
         expect(result).toBe(6);
     })
-    test('Test 1.3', () => {
+    test('Test 3', () => {
         const result = functionsES6.DifferenceGreaterLowerNumsArray(0);
         expect(result).toBe(0);
     })
 })
 
 describe('Testing Names written correctly - SetNamesProperly', () => {
-    test('Test 1.1', () => {
+    test('Test 1', () => {
         const result = functionsES6.SetNamesProperly(["ALEJANDRO", "agustin"]);
         expect(result).toStrictEqual(["Alejandro", "Agustin"]);
     })
-    test('Test 1.2', () => {
+    test('Test 2', () => {
         const result = functionsES6.SetNamesProperly(["FeDeRiCo", "mariANO"]);
         expect(result).toStrictEqual(["Federico", "Mariano"]);
     })
-    test('Test 1.3', () => {
+    test('Test 3', () => {
         const result = functionsES6.SetNamesProperly(["AngelA", "Maria"]);
         expect(result).toStrictEqual(["Angela", "Maria"]);
     })
 })
 
 describe('Testing People names and People names by age - GetNamesAndNamesByAge', () => {
-    test('Test 1.1', () => {
+    test('Test 1', () => {
         const result = functionsES6.GetNamesAndNamesByAge([{ nombre: "Mara", edad: 30 },{ nombre: "Pablo", edad: 35 },{ nombre: "Juan", edad: 26 },{ nombre: "Marta", edad: 56 },{ nombre: "Rodrigo", edad: 31 }]);
         expect(result).toStrictEqual(["Mara", "Pablo", "Juan", "Marta", "Rodrigo"]);
     })
-    test('Test 1.2', () => {
+    test('Test 2', () => {
         const result = functionsES6.GetNamesAndNamesByAge([{ nombre: "Mara", edad: 30 },{ nombre: "Pablo", edad: 35 },{ nombre: "Juan", edad: 26 },{ nombre: "Marta", edad: 56 },{ nombre: "Rodrigo", edad: 31 }], 40);
         expect(result).toStrictEqual(["Marta"]);
+    })
+})
+
+describe('Testing Sumatory of odds inside array - SumOddsFromArray', () => {
+    test('Test 1', () => {
+        const result = functionsES6.SumOddsFromArray([2,4,6,8]);
+        expect(result).toBe(20);
+    })
+    test('Test 2', () => {
+        const result = functionsES6.SumOddsFromArray([1,3,5,7,9,11,13,15,14,17,19]);
+        expect(result).toBe(14);
     })
 })
