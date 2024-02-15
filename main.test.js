@@ -319,3 +319,29 @@ describe('Testing Difference between Max and Min from array - DifferenceGreaterL
         expect(result).toBe(0);
     })
 })
+
+describe('Testing Names written correctly - SetNamesProperly', () => {
+    test('Test 1.1', () => {
+        const result = functionsES6.SetNamesProperly(["ALEJANDRO", "agustin"]);
+        expect(result).toStrictEqual(["Alejandro", "Agustin"]);
+    })
+    test('Test 1.2', () => {
+        const result = functionsES6.SetNamesProperly(["FeDeRiCo", "mariANO"]);
+        expect(result).toStrictEqual(["Federico", "Mariano"]);
+    })
+    test('Test 1.3', () => {
+        const result = functionsES6.SetNamesProperly(["AngelA", "Maria"]);
+        expect(result).toStrictEqual(["Angela", "Maria"]);
+    })
+})
+
+describe('Testing People names and People names by age - GetNamesAndNamesByAge', () => {
+    test('Test 1.1', () => {
+        const result = functionsES6.GetNamesAndNamesByAge([{ nombre: "Mara", edad: 30 },{ nombre: "Pablo", edad: 35 },{ nombre: "Juan", edad: 26 },{ nombre: "Marta", edad: 56 },{ nombre: "Rodrigo", edad: 31 }]);
+        expect(result).toStrictEqual(["Mara", "Pablo", "Juan", "Marta", "Rodrigo"]);
+    })
+    test('Test 1.2', () => {
+        const result = functionsES6.GetNamesAndNamesByAge([{ nombre: "Mara", edad: 30 },{ nombre: "Pablo", edad: 35 },{ nombre: "Juan", edad: 26 },{ nombre: "Marta", edad: 56 },{ nombre: "Rodrigo", edad: 31 }], 40);
+        expect(result).toStrictEqual(["Marta"]);
+    })
+})

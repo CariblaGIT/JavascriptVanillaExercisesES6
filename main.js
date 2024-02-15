@@ -8,6 +8,8 @@ devolverme solo el 5.
 
 */
 
+const { array } = require("yargs");
+
 const ReturnLastArray = (array, n = 0) => {
     if(n == 0){
         return array[array.length-1]
@@ -156,11 +158,7 @@ array
 */
 
 const RemoveElementFromArray = (array, object) => {
-    if(array.findIndex((element) => element == object)){
-        return array.filter(item => item !== object) 
-    } else {
-        throw new Error("Objeto no incluido");
-    }
+    return (array.findIndex((element) => element == object)) ? array.filter(item => item !== object) : new Error("Objeto no incluido");
 }
 
 module.exports.RemoveElementFromArray = RemoveElementFromArray;
@@ -215,7 +213,7 @@ pasa ambas cosas por parámetro. Es decir, la ejecución de rellenar(3, 4) serí
 */
 
 const FillListWithElementsNTimes = (length, content) => {
-    return new Array(length).fill(content)
+    return new Array(length).fill(content);
 }
 
 module.exports.FillListWithElementsNTimes = FillListWithElementsNTimes;
@@ -380,11 +378,7 @@ parámetro el objeto y la propiedad en cuestión)
 */
 
 const CheckObjectProperty = (object, property) => {
-    if(Object.keys(object).includes(property)){
-        return true;
-    } else {
-        return false;
-    }
+    return (Object.keys(object).includes(property)) ? true : false;
 }
 
 module.exports.CheckObjectProperty = CheckObjectProperty;
@@ -411,11 +405,7 @@ cualquier cantidad de notas como parámetro
 const CheckNotesFromStudent = (...marks) => {
     let totalMarks = marks.length
     let sumMarks = marks.reduce((total, current) => total + current);
-    if(sumMarks / totalMarks > 5){
-        return true;
-    } else {
-        return false;
-    }
+    return (sumMarks / totalMarks > 5) ? true : false;
 }
 
 module.exports.CheckNotesFromStudent = CheckNotesFromStudent;
@@ -481,17 +471,50 @@ const RemoveAgeFromPersona = (arrayObjects) => {
 module.exports.RemoveAgeFromPersona = RemoveAgeFromPersona;
 
 /*
+
 24. Dado el array de nombres ["mara", "pAblo", "juan", "MARCOS"], devuelve otro en que la
 primera letra de cada uno sea mayúscula y el resto minúsculas
+
+*/
+
+const SetNamesProperly = (arrayNames) => {
+    let NewArrayNames = [];
+    for(let i = 0; i < arrayNames.length; i++){
+        let nameSplitted = arrayNames[i].split('');
+        for(let j = 0; j < nameSplitted.length; j++){
+            (j == 0) ? nameSplitted[j] = nameSplitted[j].toUpperCase() : nameSplitted[j] = nameSplitted[j].toLowerCase();
+        }
+        NewArrayNames.push(nameSplitted.join(''));
+    }
+    return NewArrayNames;
+}
+
+module.exports.SetNamesProperly = SetNamesProperly;
+
+/*
+
 25. Crea un array con únicamente los nombres de los siguientes objetos
-let personas = [
-{ nombre: "Mara", edad: 30 },
-{ nombre: "Pablo", edad: 35 },
-{ nombre: "Juan", edad: 26 },
-{ nombre: "Marta", edad: 56 },
-{ nombre: "Rodrigo", edad: 31 },
-];
+let personas = [{ nombre: "Mara", edad: 30 },{ nombre: "Pablo", edad: 35 },{ nombre: "Juan", edad: 26 },{ nombre: "Marta", edad: 56 },{ nombre: "Rodrigo", edad: 31 }];
 Además, saca un array únicamente con los nombres de los mayores de 30
+
+*/
+
+const GetNamesAndNamesByAge = (arrayPeople, age = 0) => {
+    let arrayPeopleNames = [];
+    let arrayPeopleNamesByAge = [];
+    for(let i = 0; i < arrayPeople.length; i++){
+        const { nombre, edad, ...nuevoObjeto } = arrayPeople[i];
+        arrayPeopleNames.push(nombre);
+        if(age != 0 && edad > age){
+            arrayPeopleNamesByAge.push(nombre);
+        }
+    }
+    return (age == 0) ? arrayPeopleNames : arrayPeopleNamesByAge;
+}
+
+module.exports.GetNamesAndNamesByAge = GetNamesAndNamesByAge;
+
+/*
 26. Dado un array de números, crea una función que sume solo los pares
 27. Dado un nombre completo (en string), obtén sus iniciales y sácalas también en una string
 28. Saca únicamente los nombres de los estudiantes que tengan una media por encima de 9
