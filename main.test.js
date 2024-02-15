@@ -367,3 +367,14 @@ describe('Testing Getting initials of name - GetInitialsOfName', () => {
         expect(result).toBe("M.R");
     })
 })
+
+describe('Testing Getting brilliant students from array - GetBrilliantStudents', () => {
+    test('Test 1', () => {
+        const result = functionsES6.GetBrilliantStudents([{ nombre: 'Mara', notas: [10, 10, 10, 8, 9] },{ nombre: 'David', notas: [6, 2, 5, 10, 7] },{ nombre: 'Marcos', notas: [3, 5, 2, 8, 5] },{ nombre: 'Pablo', notas: [10, 10, 9, 8, 9] }]);
+        expect(result).toStrictEqual(["Mara", "Pablo"]);
+    })
+    test('Test 2', () => {
+        const result = functionsES6.GetBrilliantStudents([{ nombre: 'Carlos', notas: [5, 5, 6, 10, 5] }]);
+        expect(result).toStrictEqual([]);
+    })
+})

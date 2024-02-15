@@ -552,11 +552,23 @@ module.exports.GetInitialsOfName = GetInitialsOfName;
 /*
 
 28. Saca únicamente los nombres de los estudiantes que tengan una media por encima de 9
-let estudiantes = [
-{ nombre: 'Mara', notas: [10, 7, 8, 8, 9] },
-{ nombre: 'David', notas: [6, 2, 5, 10, 7] },
-{ nombre: 'Marcos', notas: [3, 5, 2, 8, 5] },
-{ nombre: 'Pablo', notas: [10, 10, 9, 8, 9] },
-];
+let estudiantes = [{ nombre: 'Mara', notas: [10, 7, 8, 8, 9] },{ nombre: 'David', notas: [6, 2, 5, 10, 7] },{ nombre: 'Marcos', notas: [3, 5, 2, 8, 5] },{ nombre: 'Pablo', notas: [10, 10, 9, 8, 9] }];
 
 */
+
+const GetBrilliantStudents = (arrayStudents) => {
+    let arrayBrilliantStudents = [];
+    for(let i = 0; i<arrayStudents.length; i++){
+        let sumMarks = 0;
+        const {nombre, notas} = arrayStudents[i];
+        for(let j = 0; j < notas.length; j++){
+            sumMarks += notas[j];
+        }
+        if((sumMarks / notas.length) > 9){
+            arrayBrilliantStudents.push(nombre);
+        }
+    }
+    return arrayBrilliantStudents;
+}
+
+module.exports.GetBrilliantStudents = GetBrilliantStudents;
