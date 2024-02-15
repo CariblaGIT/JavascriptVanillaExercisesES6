@@ -86,8 +86,8 @@ describe('Mayor repeticion en array - RepetitiveElementsFromArray', () => {
             expect(result).toStrictEqual([-1, 3]);
         })
         test('Test 1.3', () => {
-            const result = functionsES6.RepetitiveElementsFromArray([1.765, 0.3245, 1.765, -9.99999, 0, 1.765, 10.01010101010]);
-            expect(result).toStrictEqual([1.765, 3]);
+            const result = functionsES6.RepetitiveElementsFromArray(["Patata", "Patata", "Patata", "Patata", "kiwi", "kiwi", 1234567890]);
+            expect(result).toStrictEqual(["Patata", 4]);
         })
     })
     describe('Bloque 2 - Arrays no comunes', () => {

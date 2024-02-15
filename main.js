@@ -441,13 +441,46 @@ const DifferenceGreaterLowerNumsArray = (...array) => {
 module.exports.DifferenceGreaterLowerNumsArray = DifferenceGreaterLowerNumsArray;
 
 /*
+
 22. Crea dos arrays de objetos. El primero debe contener los nombres y apellidos de por lo menos
 tres personas. El segundo debe contener otros datos de esas mismas personas, como su dirección
 y su número de teléfono. Utiliza una función para combinar ambos arrays y obtener un array nuevo
 en que cada objeto contiene toda la información de cada persona.
+
+*/
+
+const MixArraysDataShared = (array1, array2) => {
+    let arrayPersonas = [];
+    for(let i = 0; i < array1.length; i++){
+        arrayPersonas.push(Object.assign({}, array1[i], array2[i]))
+    }    
+    return arrayPersonas;
+}
+
+//console.log(MixArraysDataShared([{nombre: "Carlos", apellidos: "Ibañez", edad: 23}, {nombre: "Marina", apellidos: "Escriva", edad: 26}, {nombre: "Sergio", apellidos: "Torres", edad: 35}],[{ciudad: "Valencia", telefono: "987654321"}, {ciudad: "Valencia", telefono: "987654321"}, {ciudad: "Valencia", telefono: "987654321"}]));
+module.exports.MixArraysDataShared = MixArraysDataShared;
+
+/*
+
 23. Dado el objeto combinado del ejercicio anterior, crea una función que saque cada uno de los
 objetos excluyendo la edad de la persona. Es decir, debo ver todas las propiedades de cada objeto
 menos la edad. Hazlo utilizando el operador ...
+
+*/
+
+const RemoveAgeFromPersona = (arrayObjects) => {
+    let arrayNewObjects = [];
+    for(let i = 0; i<arrayObjects.length; i++){
+        const { edad, ...nuevoObjeto } = arrayObjects[i];
+        arrayNewObjects.push(nuevoObjeto);
+    }
+    return arrayNewObjects;
+}
+
+//console.log(RemoveAgeFromPersona([{nombre: 'Sergio',apellidos: 'Torres',edad: 35,ciudad: 'Valencia',telefono: '987654321'}]));
+module.exports.RemoveAgeFromPersona = RemoveAgeFromPersona;
+
+/*
 24. Dado el array de nombres ["mara", "pAblo", "juan", "MARCOS"], devuelve otro en que la
 primera letra de cada uno sea mayúscula y el resto minúsculas
 25. Crea un array con únicamente los nombres de los siguientes objetos
